@@ -8,7 +8,7 @@ pip 是一个 Python 包也是 Python 推荐的包管理程序，可以用于安
 
 ## pip常用命令
 
-基本用法 ```pip install package_name```
+**安装命令**： pip install package_name
 
     明确指定版本号：pip install package_name==1.0.0。
     指定最小版本号：pip install package_name>=1.0.0。
@@ -21,12 +21,11 @@ pip 也支持直接从文件读取包列表以便批量安装，通常命名为 
     package_name2>=1.0.0
     package_name3>=1.0.0,<2.0.0
 
-生成```requirements.txt```命令： pip freeze > requirements.txt
+**生成```requirements.txt```命令**： pip freeze > requirements.txt
 
-安装```requirments.txt```依赖命令： pip install -r requirements.txt
+**安装```requirments.txt```依赖命令**： pip install -r requirements.txt
 
-安装whl文件命令： pip install package_name.whl
-
+**安装whl文件命令**： pip install package_name.whl（本地） 或 pip3 install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl （网上） 
 
 ## Pipfile与pipfile.lock
 
@@ -47,9 +46,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-torch-nightly = ">=1.0.0.dev20190325"
 numpy = "==1.16.3"
-torch = ">=1.0.1.post2"
+torch = {file = "https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl"}
 
 [requires]
 python_version = "3.6"
@@ -125,6 +123,9 @@ Linux or Mac 环境下，把如下语句追加到.bashrc或者.zshrc即可实现
     pipenv update urllib3  #更新指定包
     pipenv check   #查看软件包有没有安全漏洞
     pipenv lock：确认 Pipfile 中所有包已安装，并根据安装版本生成 Pipfile.lock。
+    pipenv install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl  #从网上安装whl
+
+***pip/pip3出现的地方都可以用pipenv进行替换，目前使用过程中没有见到不可行方案***
 
 **环境变量管理**
 

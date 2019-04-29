@@ -1,5 +1,6 @@
 # PythonNote
 
+记录在使用Python过程中见到的一些常见问题，和一些使用技巧。
 
 
 # pip与pipfile
