@@ -17,6 +17,15 @@
 
 requirments.txt与pipfile的关系，pip与pipenv的关系，细节见[pip与pipfile](pip_pipenv/README.md)
 
+# \_\_name\_\_
+
+如果直接运行xxx.py文件（python3 xxx.py）Python解释器把__name__置为__main__，而如果在其他地方导入该hello模块时,该文件的__name__就不是__main__，if判断将失败，因此，这种if测试可以让一个模块通过命令行运行时执行一些额外的代码，而在import的时候又不会去执行,因为import的时候，给该模块__name__设置的是模块文件名。比如test.py,那么被import是，该模块__name__值是test.py
+
+```
+if __name__=='__main__':
+    do_something()
+```
+
 # python中-m
 
 命令解释
