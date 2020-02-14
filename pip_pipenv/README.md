@@ -89,7 +89,7 @@ pipenv 是 Pipfile 主要倡导者、requests 作者 Kenneth Reitz 的一个库�
 
 **Shell 自动补齐**
 
-Linux or Mac 环境下，把如下语句追加到.bashrc或者.zshrc即可实现自动补齐：```eval "$(pipenv --completion)"```
+Linux or Mac 环境下，把如下语句追加到.bashrc或者.zshrc即可实现自动补齐：`eval "$(pipenv --completion)"`
 
 **pipenv 可使用的命令参数**
 
@@ -152,3 +152,10 @@ hello foo
     使用pipenv管理的环境来运行：pipenv run python main.py  
     或者用pipenv shell激活后再用python main.py来运行
     或者直接.venv/bin/python main.py(.venv是pipenv创建的虚拟环境目录)
+
+**自定义虚拟环境路径**
+
+很多工具遵循Linux开发习惯，将东西全存在用户目录中，在Linux中可能没啥，但是在Windows下可能有人不喜欢把这些东西放在用户目录。当然pipenv也可以自定义，只需要设置或修改WORKON_HOME环境变量的值即可。
+
+如果设置了 PIPENV_VENV_IN_PROJECT=1 环境变量，pipenv会把虚拟环境放在项目目录的.venv目录下。
+
