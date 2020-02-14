@@ -21,11 +21,13 @@ pip 也支持直接从文件读取包列表以便批量安装，通常命名为 
     package_name2>=1.0.0
     package_name3>=1.0.0,<2.0.0
 
-**生成```requirements.txt```命令**： pip freeze > requirements.txt
+**生成`requirements.txt`命令**： pip freeze > requirements.txt
 
-**安装```requirments.txt```依赖命令**： pip install -r requirements.txt
+**安装`requirments.txt`依赖命令**： pip install -r requirements.txt
 
-**安装whl文件命令**： pip install package_name.whl（本地） 或 pip3 install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl （网上） 
+**安装whl文件命令**： 
+- pip3 install package_name.whl（本地） 
+- pip3 install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl （网上） 
 
 ## Pipfile与pipfile.lock
 
@@ -64,7 +66,7 @@ pip 提供了 -p/--pipfile 参数用于安装 Pipfile，类似 -r/--requirement 
 
 **Note:需要注意的是，pip install -p 安装时会自动生成或更新 Pipfile.lock 文件。**
 
-```Pipfile.lock``` 是根据 Pipfile 和当前环境自动生成的 JSON 格式的依赖文件，任何情况下都不要手动修改该文件！
+`Pipfile.lock` 是根据 Pipfile 和当前环境自动生成的 JSON 格式的依赖文件，任何情况下都不要手动修改该文件！
 
 生成命令：pip freeze -p Pipfile
 
