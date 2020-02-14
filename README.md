@@ -31,6 +31,7 @@ python -m pydoc -p xxx” //就能生成 HTML 格式的官方帮助文档
 python -m pdb xxx.py” //以调试模式来执行“xxx.py”脚本
 
 python -m pip install xxx
+python3.6 -m pip3 install --upgrade pip
 ```
 
 **1、对于普通模块**
@@ -65,7 +66,6 @@ python test.py
 换句话说，假设有个包的名称是“pname”，那么， `python -m pname`，其实就等效于`python -m pname.__main__`。
 
 用以前文创建 HTTP 服务为例，“http”是 Python 内置的一个包，它没有`__main__.py`”文件，所以使用“-m”方式执行时，就会报错：`No module named http.__main__; 'http' is a package and cannot be directly executed。`， 所以采用了`python -m 包.模块`的方式，而 pip 包因为有统一的入口模块，有`__main__.py`文件，最后只需要写`python -m 包`，简明直观。
-
 
 
 ## 为什么要用python -m
